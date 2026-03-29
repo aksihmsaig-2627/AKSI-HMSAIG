@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE OG OF BANKSAIG</title>
+
+<style>
+:root{
+    --dark:#112250;
+    --mid:#3c507d;
+    --light:#f5f0e9;
+    --gold:#f7d774;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,var(--dark),var(--mid));
+    color:white;
+    padding:20px;
+}
+
+/* CARD UTAMA */
+.box{
+    background:linear-gradient(135deg,#fff8e1,var(--gold));
+    color:#333;
+    padding:40px;
+    border-radius:25px;
+    max-width:500px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    animation:fade .5s ease;
+}
+
+/* TITLE */
+.box h1{
+    margin-bottom:15px;
+    color:#5a4700;
+}
+
+/* TEXT */
+.box p{
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+/* BUTTON DRIVE */
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:12px;
+    background:#112250;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#3c507d;
+}
+
+/* BACK BUTTON */
+.back{
+    margin-top:20px;
+    display:block;
+    color:#5a4700;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* ANIMASI */
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>THE OG OF BANKSAIG 👑</h1>
+
+    <p>
+        Ini adalah Bank SAIG versi asli.<br>
+        Kalau kamu mau cari materi yang lebih lengkap,
+        lebih banyak, dan lebih update,<br>
+        bisa langsung akses di sini yaa 👇
+    </p>
+
+    <!-- GANTI LINK INI -->
+    <a href="https://drive.google.com/drive/u/0/folders/1xxJqObq6EZw2gKmroALLJYIMmyB8XG1_" target="_blank" class="btn">
+        Buka Google Drive
+    </a>
+
+    <a href="index.html" class="back"> Kembali</a>
+</div>
+
+</body>
+</html>

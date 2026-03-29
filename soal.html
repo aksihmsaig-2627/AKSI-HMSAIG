@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semester</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style> 
+:root{
+    --dark: #112250;
+    --mid: #3c507d;
+    --light: #f5f0e9;
+    --soft: #d9cbc2;
+    --text-main: #d9cbc2;
+    --text-dim: #f5f0e9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,var(--dark),var(--mid));
+    color:var(--text-main);
+
+    /* FLEXIBLE */
+    min-height:100vh;
+    padding:clamp(20px,5vw,50px);
+}
+
+/* MAIN */
+.main{
+    text-align:center;
+}
+
+/* TITLE */
+h1{
+    font-size:clamp(2rem,5vw,3.2rem);
+    margin-bottom:clamp(20px,5vw,40px);
+
+    background:linear-gradient(90deg,var(--light),var(--soft));
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* GRID AUTO RESPONSIVE */
+.grid{
+    display:grid;
+
+    /* INI KUNCI FLEXIBLE */
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+
+    gap:clamp(15px,3vw,25px);
+    max-width:800px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    aspect-ratio:1/1; /* BIKIN KOTAK OTOMATIS */
+    border-radius:25px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+    transition:.3s;
+    padding:10px;
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.08);
+}
+
+/* ICON */
+.card i{
+    font-size:clamp(22px,4vw,35px);
+    margin-bottom:10px;
+    color:var(--soft);
+}
+
+/* TEXT */
+.card h3{
+    margin:0;
+    font-weight:700;
+    font-size:clamp(0.85rem,2.5vw,1rem);
+    color:var(--text-dim);
+    text-align:center;
+}
+
+/* BUTTON */
+button{
+    margin-top:20px;
+    padding:clamp(8px,2vw,12px) clamp(16px,4vw,25px);
+    border:none;
+    border-radius:12px;
+    background:var(--soft);
+    color:var(--dark);
+    cursor:pointer;
+    transition:.3s;
+    font-size:clamp(0.8rem,2vw,1rem);
+}
+
+button:hover{
+    background:var(--light);
+}
+
+.btn-back{
+    display:block;
+    margin:clamp(10px,3vw,20px) auto 0;
+    padding:clamp(5px,1.5vw,8px) clamp(10px,3vw,16px);
+    border-radius:8px;
+    background:#112250;
+    color:white;
+    text-decoration:none;
+    font-size:clamp(0.7rem,2vw,0.85rem);
+    width:fit-content;
+}
+/* SECTION */
+.section{
+    display:none;
+    animation:fade .4s ease;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Soal</h1>
+
+<!-- SEMESTER LIST -->
+<div id="semesterList" class="grid">
+
+<div class="card" onclick="notReady()"><i class="fas fa-book"></i><h3>Semester 1</h3></div>
+<div class="card" onclick="openSemester(2)"><i class="fas fa-book"></i><h3>Semester 2</h3></div>
+<div class="card" onclick="notReady()"><i class="fas fa-book"></i><h3>Semester 3</h3></div>
+<div class="card" onclick="openSemester(4)"><i class="fas fa-book"></i><h3>Semester 4</h3></div>
+<div class="card" onclick="notReady()"><i class="fas fa-book"></i><h3>Semester 5</h3></div>
+<div class="card" onclick="notReady()"><i class="fas fa-book"></i><h3>Semester 6</h3></div>
+<div class="card" onclick="notReady()"><i class="fas fa-book"></i><h3>Semester 7</h3></div>
+</div>
+<div> <button id="btnHome" onclick="window.location.href='landing.html'"> 🏠 Kembali ke Beranda</button>
+
+<!-- SEMESTER 2 -->
+<div id="semester2" class="section">
+<h1>Semester 2</h1>
+<div class="grid">
+
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1pOnCMvfjUUAXwKYYvQNaXt7oVaa3dLov?usp=drive_link')"><h3>GEOEKO</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1uxd0n1yzxzswrIcNnyxDRfIChXxVSedM?usp=drive_link')"><h3>GEOTANAH</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1NyvDdnKfhrVuETOHxk6Md957nwnYlNOV?usp=drive_link')"><h3>IUT</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1WX-fTGnuv3_ZBbTNYcglOFrbx3z3r4bS?usp=drive_link')"><h3>MATSAIG</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1TYVg153UjpzLOH_KHhAQoxaDk8-u9ISx?usp=drive_link')"><h3>PJDASAR</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1h3XV9yU-kwonZ6YZTtKr0yQ4USq-Odv1?usp=drive_link')"><h3>PROPET</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1DL7orhikFNcAK4R5-PZi_vU_7qnuob-H?usp=drive_link')"><h3>SAH</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1_6eDhJ4rWT0_20rDibv66fyj_wfdmTxw?usp=drive_link')"><h3>SIG</h3></div>
+
+</div>
+<br>
+<button onclick="back()"> Kembali</button>
+</div>
+
+<!-- SEMESTER 4 -->
+<div id="semester4" class="section">
+<h1>Semester 4</h1>
+<div class="grid">
+
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1PP6Ms3V-tAU2zeQxeH0RI4HEU7o-OH88?usp=drive_link')"><h3>APS</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1EXXgFf__KNsvgqcE30YaApYtYxMMdCFd?usp=drive_link')"><h3>GSP</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1zAnriGtH7PtjCH-At2gRRi1JkmTbAt75?usp=drive_link')"><h3>ILWIL</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/168uK8Uus6ID2R_R0DNyzg02ugNqzH2Gm?usp=drive_link')"><h3>KARTEM</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1WoNCcPcHpOlWbacmNLOfHViK9_I-1vwc?usp=drive_link')"><h3>PEPJ</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1YXg_RL4yS5ukKNhmyfsVKMeRuVjpOUpl?usp=drive_link')"><h3>PJSA</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1AgZZ4PLSq6-5ugYJ06wFiGOibMnksGS5?usp=drive_link')"><h3>PS</h3></div>
+<div class="card" onclick="goLink('https://drive.google.com/drive/folders/1Lsq0w6m9LSZCCkWjSIAiNLF5D7cn-8g5?usp=drive_link')"><h3>PW ICT</h3></div>
+
+
+</div>
+<br>
+<button onclick="back()"> Kembali</button>
+</div>
+
+</div>
+
+<script>
+function openSemester(num){
+    document.getElementById("semesterList").style.display = "none";
+
+    document.getElementById("btnHome").style.display = "none";
+
+    document.querySelectorAll(".section").forEach(sec => {
+        sec.style.display = "none";
+    });
+
+    document.getElementById("semester"+num).style.display = "block";
+}
+function back(){
+    document.getElementById("semesterList").style.display = "";
+
+    document.getElementById("btnHome").style.display = "block";
+
+    document.querySelectorAll(".section").forEach(sec => {
+        sec.style.display = "none";
+    });
+}
+
+function notReady(){
+    alert("Maaf Laman Ini Belum Tersedia");
+}
+
+function goLink(link){
+    if(link.includes("LINK_")){
+        alert("Link Google Drive belum diisi!");
+    } else {
+        window.open(link, "_blank");
+    }
+}
+</script>
+
+</body>
+</html>

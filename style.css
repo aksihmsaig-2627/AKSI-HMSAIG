@@ -1,0 +1,40 @@
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:
+        radial-gradient(circle at 30% 25%, #C06C84 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, #7A2F4F 0%, transparent 60%),
+        linear-gradient(to bottom, #120A10, #2A1620);
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 100;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:24px;
+    font-size:16px;
+    opacity:0.8;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:1;
+}
+
+/* KONTEN TENGAH */
+.main{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
